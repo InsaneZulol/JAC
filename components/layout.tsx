@@ -18,7 +18,7 @@ export default function Layout({
             else setNavStyle("default");
         },
         [navStyle],
-        300
+        150
     );
 
     return (

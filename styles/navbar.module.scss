@@ -1,0 +1,61 @@
+@import "./colors.module.scss";
+
+@mixin navbar {
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: +0.9px;
+  font-weight: 500;
+  color: $nav-text-color;
+  transition: all .8s linear;
+  // spacing between group i.e. Solutions, About, Pricing <-> Support, Docs
+  div {
+    margin: 90px;
+    cursor: pointer;
+  }
+  // spacing between element i.e. Support <-> Docs
+  a {
+    margin: 10px;
+    text-decoration: none;
+  }
+  a:hover {
+    color: lighten($color: $nav-text-color, $amount: 35%);
+  }
+}
+
+.navWhenTop {
+  @include navbar();
+  position: absolute;
+  background: $bg-color;
+}
+
+.navWhenScrolled {
+  @include navbar();
+  position: fixed;
+  background: $bg-color;
+  border-bottom: solid 1px lightgreen;
+  //opacity: .6;
+  background-color: rgba(27, 40, 56, .1);
+  backdrop-filter: blur(4px);
+  a {
+    transition: all 3.3s ease;
+    //animation: animated-nav-text 1s normal;
+  }
+}
+
+@keyframes animated-nav-text {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

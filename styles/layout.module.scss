@@ -1,44 +1,4 @@
-$bg-color: #1b2838;
-$nav-text-color: #9ca9b3;
-
-@mixin navbar {
-  height: 60px;
-  width: 100%;
-}
-
-.navWhenTop {
-  @include navbar();
-  position: fixed;
-  
-  background: $bg-color;
-  color: $nav-text-color;
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: +0.2px;
-  font-weight: 600;
-  // spacing between group i.e. Solutions, About, Pricing <-> Support, Docs
-  div {
-    margin: 90px;
-    cursor: pointer;
-  }
-  // spacing between element i.e. Support <-> Docs
-  a {
-    margin: 10px;
-    text-decoration: none;
-  }
-  a:hover {
-    color: lighten($color: $nav-text-color, $amount: 35%);
-  }
-}
-
-.navWhenScrolled {
-  background-color: red;
-}
+@import "./navbar.module.scss";
 
 .logo {
   height: 2em;
