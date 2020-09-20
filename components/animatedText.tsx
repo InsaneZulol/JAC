@@ -1,37 +1,24 @@
-import '../styles/animatedText.module.scss'
+import style from '../styles/animatedText.module.scss'
+
 export default function AnimatedText() {
     return (
-        <section className="section-process">
-            <div className="process-steps-container">
-                <div className="process-step-container process-step-1">
-                    <div className="process-step-title-container">
-                        <h1 className="process-step-title">
-                            Develop.
-                            </h1>
-                        <div className="process-step-title-overlay">
-                            Develop.
-                            </div>
-                    </div>
+        <section className={style['anim']}>
+            <div className={style['anim__step1Container']}>
+                <div className={style['anim__textContainer']}>
+                    <h1 className={style['anim__text']}> Excel.</h1>
+                    <div className={style['anim__text--overlay']}>Excel.</div>
                 </div>
-                <div className="process-step-container process-step-2">
-                    <div className="process-step-title-container">
-                        <h1 className="process-step-title">
-                            Preview
-                            </h1>
-                        <div className="process-step-title-overlay">
-                            Preview
-                            </div>
-                    </div>
+            </div>
+            <div className={style['anim__step2Container']}>
+                <div className={style['anim__textContainer']}>
+                    <h1 className={style['anim__text']}>Dominate.</h1>
+                    <div className={style['anim__text--overlay']}>Dominate.</div>
                 </div>
-                <div className="process-step-container process-step-3">
-                    <div className="process-step-title-container">
-                        <h1 className="process-step-title">
-                            Ship.
-                            </h1>
-                        <div className="process-step-title-overlay">
-                            Ship.
-                            </div>
-                    </div>
+            </div>
+            <div className={style['anim__step3Container']}>
+                <div className={style['anim__textContainer']}>
+                    <h1 className={style['anim__text']}>Undetected.</h1>
+                    <div className={style['anim__text--overlay']}>Undetected.</div>
                 </div>
             </div>
         </section>

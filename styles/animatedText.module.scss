@@ -1,104 +1,132 @@
-.sectionprocess {
-  --gradient-color-1: #ef008f;
-  --gradient-color-2: #6ec3f4;
-  --gradient-color-3: #7038ff;
-  --gradient-color-4: #c9c9c9;
-  .process-steps-container {
-    .process-step-container {
-        .process-step-title-container {
-        margin-top: -40px; //To adjust for the line-height
-        position: relative;
-        .process-step-title,
-        .process-step-title-overlay {
-          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-            Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-size: 156px;
-          color: white;
-          font-weight: 900;
-          margin: 0;
-          line-height: 1.3em; // If too short, sticking out letters might get cut off
-          letter-spacing: -12px;
-        }
-
-        .process-step-title-overlay {
-          line-height: 1.3em;
-        }
-
-        .process-step-title-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: auto;
-          padding-right: 30px; //Adding some space on the right otherwise gradient may be cut off depending on the font.
-          height: 100%;
-          opacity: 1;
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-      }
-
-      &.process-step-1 {
-        .process-step-title-overlay {
-          background-image: linear-gradient(
-            90deg,
-            var(--gradient-color-1),
-            var(--gradient-color-2)
-          );
-          animation: animated-gradient-title-1 8s infinite;
-        }
-      }
-
-      &.process-step-2 {
-        .process-step-title-overlay {
-          background-image: -webkit-linear-gradient(
-            90deg,
-            var(--gradient-color-2),
-            var(--gradient-color-3)
-          );
-          animation: animated-gradient-title-2 8s infinite;
-        }
-      }
-
-      &.process-step-3 {
-        .process-step-title-overlay {
-          background-image: -webkit-linear-gradient(
-            90deg,
-            var(--gradient-color-3),
-            var(--gradient-color-1)
-          );
-          animation: animated-gradient-title-3 8s infinite;
-        }
-      }
-    }
+// rework in BEM:
+//
+//
+// https://github.com/airbnb/css
+// section
+.anim {
+  @mixin text-mix {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 170px;
+    color: white;
+    font-weight: 900;
+    margin: 0;
+    //opacity: 0;
+    line-height: 1.3em; // If too short, sticking out letters might get cut off
+    letter-spacing: -12px;
   }
 
-  @keyframes animated-gradient-title-1 {
-    0%, 16.667%, 100% {
+  @mixin text-gradient-anim($gradient-dir, $color1, $color2, $target-anim) {
+    background-image: linear-gradient(
+      $gradient-dir,
+      var($color1),
+      var($color2)
+    );
+    animation: $target-anim 8s infinite;
+  }
+
+  --gradient-color-1: #9b005d;
+  --gradient-color-2: #ff00ff;
+  --gradient-color-3: #3b00cf;
+  --gradient-color-4: #62d3ff;
+  --gradient-color-5: #f55a00;
+  --gradient-color-6: #f1ff70;
+  //background-color: darkturquoise;
+
+  &__step1Container,
+  &__step2Container,
+  &__step3Container {
+    position: relative;
+    margin-top: -45px; //To adjust for the line-height
+    //text-align: center;
+  }
+
+  &__textContainer {
+    text-align: center;
+
+  }
+
+  &__text {
+    @include text-mix();
+  }
+
+  &__text--overlay {
+    @include text-mix();
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: auto;
+    padding-right: 30px; //Adding some space on the right otherwise gradient may be cut off depending on the font.
+    height: 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    left: 51.72%;
+    transform: translate(-50%);
+  }
+
+  &__step1Container &__text--overlay {
+    @include text-gradient-anim(
+      90deg,
+      --gradient-color-1,
+      --gradient-color-2,
+      anim-gradient-overlay-1
+    );
+  }
+  &__step2Container &__text--overlay {
+    @include text-gradient-anim(
+      90deg,
+      --gradient-color-3,
+      --gradient-color-4,
+      anim-gradient-overlay-2
+    );
+  }
+  &__step3Container &__text--overlay {
+    @include text-gradient-anim(
+      90deg,
+      --gradient-color-5,
+      --gradient-color-6,
+      anim-gradient-overlay-3
+    );
+  }
+
+  @keyframes anim-gradient-overlay-1 {
+    0%,
+    16.667%,
+    100% {
       opacity: 1;
     }
 
-    33.333%, 83.333% {
+    33.333%,
+    83.333% {
       opacity: 0;
     }
   }
 
-  @keyframes animated-gradient-title-2 {
-    0%, 16.667%, 66.667%, 100% {
+  @keyframes anim-gradient-overlay-2 {
+    0%,
+    16.667%,
+    66.667%,
+    100% {
       opacity: 0;
     }
 
-    33.333%, 50% {
+    33.333%,
+    50% {
       opacity: 1;
     }
   }
 
-  @keyframes animated-gradient-title-3 {
-    0%, 50%, 100% {
+  @keyframes anim-gradient-overlay-3 {
+    0%,
+    50%,
+    100% {
       opacity: 0;
     }
 
-    66.667%, 83.333% {
+    66.667%,
+    83.333% {
       opacity: 1;
     }
   }
