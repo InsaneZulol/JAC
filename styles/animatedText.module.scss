@@ -9,7 +9,7 @@
       Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 150px;
     color: white;
-    font-weight: 900;
+    font-weight: 800;
     margin: 0;
     //opacity: 0;
     line-height: 1.3em; // If too short, sticking out letters might get cut off
@@ -22,7 +22,7 @@
       var($color1),
       var($color2)
     );
-    animation: $target-anim 8s infinite;
+    animation: $target-anim 10s infinite;
   }
 
   --gradient-color-1: #9b005d;
@@ -66,6 +66,19 @@
 
   }
 
+  // Animation definitions
+  //
+  //
+  &__step1Container &__text {
+    animation: anim-gradient-base-1 10s 1s infinite;
+  }
+  &__step2Container &__text {
+    animation: anim-gradient-base-2 10s 3.5s infinite;
+  }
+  &__step3Container &__text {
+    animation: anim-gradient-base-3 10s 9.5s infinite;
+  }
+
   &__step1Container &__text--overlay {
     @include text-gradient-anim(
       90deg,
@@ -91,6 +104,44 @@
     );
   }
 
+  @keyframes anim-gradient-base-1 {
+    0%,
+    16.667%,
+    100% {
+      opacity: 0;
+    }
+
+    33.333%,
+    83.333% {
+      opacity: 1;
+    }
+  }
+  @keyframes anim-gradient-base-2 {
+    0%,
+    16.667%,
+    66.667%,
+    100% {
+      opacity: 1;
+    }
+
+    33.333%,
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes anim-gradient-base-3 {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+
+    66.667%,
+    83.333% {
+      opacity: 0;
+    }
+  }
+  // overlay is just reverse of base 
   @keyframes anim-gradient-overlay-1 {
     0%,
     16.667%,
@@ -103,7 +154,7 @@
       opacity: 0;
     }
   }
-
+  // overlay is just reverse of base 
   @keyframes anim-gradient-overlay-2 {
     0%,
     16.667%,
@@ -117,7 +168,7 @@
       opacity: 1;
     }
   }
-
+  // overlay is just reverse of base 
   @keyframes anim-gradient-overlay-3 {
     0%,
     50%,
@@ -131,3 +182,7 @@
     }
   }
 }
+
+  // 
+  //
+  // EOF Animation definitions
