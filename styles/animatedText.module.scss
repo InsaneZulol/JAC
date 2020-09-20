@@ -7,7 +7,7 @@
   @mixin text-mix {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
       Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 170px;
+    font-size: 150px;
     color: white;
     font-weight: 900;
     margin: 0;
@@ -43,7 +43,6 @@
 
   &__textContainer {
     text-align: center;
-
   }
 
   &__text {
@@ -55,15 +54,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: auto;
-    padding-right: 30px; //Adding some space on the right otherwise gradient may be cut off depending on the font.
+    //padding-right: 30px; //Adding some space on the right otherwise gradient may be cut off depending on the font.
     height: 100%;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    left: 51.72%;
-    transform: translate(-50%);
+
   }
 
   &__step1Container &__text--overlay {
