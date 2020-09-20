@@ -70,7 +70,6 @@
   //
   //
   &__step1Container &__text {
-<<<<<<< HEAD
     animation: anim-gradient-base-1 10s .1s infinite;
   }
   &__step2Container &__text {
@@ -78,15 +77,6 @@
   }
   &__step3Container &__text {
     animation: anim-gradient-base-3 10s .1s infinite;
-=======
-    animation: anim-gradient-base-1 10s 1s infinite;
-  }
-  &__step2Container &__text {
-    animation: anim-gradient-base-2 10s 3.5s infinite;
-  }
-  &__step3Container &__text {
-    animation: anim-gradient-base-3 10s 9.5s infinite;
->>>>>>> aa05aad496a761ad8a1a42404b964a34bc9e7a97
   }
 
   &__step1Container &__text--overlay {
