@@ -1,6 +1,7 @@
 @import "./colors.module.scss";
 
 @mixin navbar {
+  z-index: 1;
   height: 60px;
   width: 100%;
   align-items: center;
@@ -10,10 +11,10 @@
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: +0.9px;
+  letter-spacing: -0.4px;
   font-weight: 500;
   color: $nav-text-color;
-  transition: all .8s linear;
+  transition: all .4s linear;
   // spacing between group i.e. Solutions, About, Pricing <-> Support, Docs
   div {
     margin: 90px;
@@ -39,12 +40,13 @@
   @include navbar();
   position: fixed;
   background: $bg-color;
-  border-bottom: solid 1px lightgreen;
+  border-bottom: solid 1px rgba(126, 252, 109, 0.075);
   //opacity: .6;
   background-color: rgba(27, 40, 56, .1);
   backdrop-filter: blur(4px);
   a {
-    transition: all 3.3s ease;
+    opacity: 0;
+    transition: all .2s ease-in-out;
     //animation: animated-nav-text 1s normal;
   }
 }
