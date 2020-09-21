@@ -17,8 +17,8 @@ export default function AnimatedText() {
             </div>
             <div className={style['anim__step3Container']}>
                 <div className={style['anim__textContainer']}>
-                    <h1 className={style['anim__text']}>Undetected.</h1>
-                    <div className={style['anim__text--overlay']}>Undetected.</div>
+                    <h1 className={style['anim__text']}>Stay undetected.</h1>
+                    <div className={style['anim__text--overlay']}>Stay undetected.</div>
                 </div>
             </div>
         </section>

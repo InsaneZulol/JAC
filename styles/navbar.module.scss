@@ -2,7 +2,7 @@
 
 @mixin navbar {
   z-index: 1;
-  height: 60px;
+  height: 50px;
   width: 100%;
   align-items: center;
   display: inline-flex;
@@ -22,11 +22,14 @@
   }
   // spacing between element i.e. Support <-> Docs
   a {
+    transition: all .15s ease-in;
     margin: 10px;
     text-decoration: none;
   }
   a:hover {
-    color: lighten($color: $nav-text-color, $amount: 35%);
+    transition: all .2s ease-in;
+    // font-size: 18px;
+    color: lighten($color: $nav-text-color, $amount: 45%);
   }
 }
 
@@ -40,23 +43,11 @@
   @include navbar();
   position: fixed;
   background: $bg-color;
-  border-bottom: solid 1px rgba(126, 252, 109, 0.075);
+  //border-bottom: solid 1px hsla(0, 0%, 100%, 0.102);
   background-color: rgba(27, 40, 56, .1);
   backdrop-filter: blur(4px);
   a {
     opacity: 0;
     transition: all .2s ease-in-out;
-    //animation: animated-nav-text 1s normal;
-  }
-}
-
-@keyframes animated-nav-text {
-  0%,
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }

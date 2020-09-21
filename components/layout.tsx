@@ -33,7 +33,7 @@ export default function Layout({
                 <nav className={navStyle === "scrolled" ? styles.navWhenScrolled : styles.navWhenTop}>
                     <div className="nav-left">
                         <Link href="/">
-                            <img src="/qml-logo.svg" alt="Quantum Logo" style={{ margin: 3 }} className={styles.logo} />
+                           <img src="/qml-logo.svg" alt="Quantum Logo" style={{ margin: 3 }} className={styles.logo} />
                         </Link>
                     </div>
                     <div className="nav-mid">
