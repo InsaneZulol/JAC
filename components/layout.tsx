@@ -9,15 +9,15 @@ export default function Layout({
     children,
     title = 'QuantumML - Stay undetected, forever.',
 }) {
-    const [navStyle, setNavStyle] = useState("default");
+    const [navPos, setNavPos] = useState("default");
     const rendersCount = useRef(0)
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
-            if (currPos.y > 10) setNavStyle("scrolled")
-            else setNavStyle("default");
+            if (currPos.y > 10) setNavPos("scrolled")
+            else setNavPos("default");
         },
-        [navStyle],
+        [navPos],
         150
     );
 
@@ -30,10 +30,10 @@ export default function Layout({
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <header>
-                <nav className={navStyle === "scrolled" ? styles.navWhenScrolled : styles.navWhenTop}>
+                <nav className={navPos === "scrolled" ? styles['navbarScrolled--frosty'] : styles['navbarTop--default']}>
                     <div className="nav-left">
                         <Link href="/">
-                           <img src="/qml-logo.svg" alt="Quantum Logo" style={{ margin: 3 }} className={styles.logo} />
+                            <img src="/qml-logo.svg" alt="Quantum Logo" style={{ margin: 3 }} className={styles.logo} />
                         </Link>
                     </div>
                     <div className="nav-mid">

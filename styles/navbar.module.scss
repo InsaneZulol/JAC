@@ -1,5 +1,7 @@
 @import "./colors.module.scss";
 
+// todo: hamburger when below 720px;
+
 @mixin navbar {
   z-index: 1;
   height: 50px;
@@ -14,40 +16,40 @@
   letter-spacing: -0.4px;
   font-weight: 500;
   color: $nav-text-color;
-  transition: all .4s linear;
+  transition: all 0.4s linear;
+
   // spacing between group i.e. Solutions, About, Pricing <-> Support, Docs
   div {
     margin: 90px;
     cursor: pointer;
   }
+
   // spacing between element i.e. Support <-> Docs
   a {
-    transition: all .15s ease-in;
     margin: 10px;
+    transition: all 0.15s ease-in;
     text-decoration: none;
+    flex-wrap: wrap;
   }
   a:hover {
-    transition: all .2s ease-in;
-    // font-size: 18px;
+    transition: all 0.2s ease-in;
     color: lighten($color: $nav-text-color, $amount: 45%);
   }
 }
 
-.navWhenTop {
+.navbarTop--default {
   @include navbar();
   position: absolute;
   background: $bg-color;
 }
 
-.navWhenScrolled {
+.navbarScrolled--frosty {
   @include navbar();
   position: fixed;
-  background: $bg-color;
-  //border-bottom: solid 1px hsla(0, 0%, 100%, 0.102);
-  background-color: rgba(27, 40, 56, .1);
+  background-color: rgba(27, 40, 56, 0.1);
   backdrop-filter: blur(4px);
   a {
     opacity: 0;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-out;
   }
 }

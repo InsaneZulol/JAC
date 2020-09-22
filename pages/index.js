@@ -11,13 +11,15 @@ export default function Home() {
           <div className={styles.pageWidth}>
             <AnimatedText />
             <section className={styles.welcomeButtonSection}>
-              <button className={styles.startBtn}>Start Hacking</button>
-              <button className={styles.demoBtn}>Demo</button>
+              <button className={styles.welcomeButtonSection__startBtn}>Start Hacking</button>
+              <button className={styles.welcomeButtonSection__demoBtn}>Demo</button>
             </section>
             <h1 className={styles.description}>
               QuantumML is the only truly undetected cheat for Escape From Tarkov.
               It combines an obsessive focus on security with performance.
               <br /> The one and only cloud-based hack.
+            <div className={styles.tinyHeader}>LEARN THE QUANTUM<span style={{ color: "lightgreen", opacity: "50%", fontSize: 18 }}>ML</span> WAY </div>
+            
             </h1>
           </div>
         </main>

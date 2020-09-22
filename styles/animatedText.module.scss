@@ -68,11 +68,24 @@
     background-clip: text;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     &__text,
     &__text--overlay {
       letter-spacing: -6px;
-      font-size: 100px; /* The width is 100%, when the viewport is 800px or smaller */
+      font-size: 90px; /* The width is 100%, when the viewport is 800px or smaller */
+      line-height: 1.4em; // If too short, sticking out letters might get cut off
+
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    &__text,
+    &__text--overlay {
+      letter-spacing: -6px;
+      font-size: 12vw; /* The width is 100%, when the viewport is 800px or smaller */
+      line-height: 1.7em; // If too short, sticking out letters might get cut off
+
+      letter-spacing: -.3vh;
     }
   }
 

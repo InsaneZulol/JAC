@@ -1,9 +1,12 @@
 @import "./colors.module.scss";
 
 @mixin buttonBase {
+  margin: 10px;
   min-height: 70px;
-  max-width: 360rem;
-  padding: 0 6rem;
+  width: 13vw;
+  min-width: 250px;
+  //min-width: 40vw;
+  //padding: 0 9vw;
   justify-content: center;
   align-items: center;
   margin-right: 12px;
@@ -17,31 +20,34 @@
 }
 
 .welcomeButtonSection {
+  margin: 50px;
   display: inline-flex;
   flex-direction: row;
-  margin: 50px;
-  .startBtn {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  &__startBtn {
     @include buttonBase();
-    flex-shrink: 1;
     background-color: white;
-    color: darken($color: $nav-text-color, $amount: 30%);
+    color: $bg-color;
     border: red;
     border: 2px solid white;
+    flex-grow: 3;
   }
-  .startBtn:hover {
+  &__startBtn:hover {
     background-color: $bg-color;
     color: invert($color: #000000);
     transform: scale(1.05, 1.05);
   }
 
-  .demoBtn {
+  &__demoBtn {
     @include buttonBase();
     background-color: $bg-color;
     color: lighten($color: $bg-color, $amount: 20%);
     border: 2px solid lighten($color: $bg-color, $amount: 20%);
-    flex-shrink: 2;
+    flex-grow: 1;
   }
-  .demoBtn:hover {
+  &__demoBtn:hover {
     background-color: $bg-color;
     color: lighten($color: $bg-color, $amount: 100%);
     border-color: lighten($color: $bg-color, $amount: 100%);
@@ -66,10 +72,20 @@
   align-items: center;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1400px) {
   .pageWidth {
-    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
+}
+
+.tinyHeader {
+  font-family: "Inter";
+  font-weight: 900;
+  margin: 100px;
+  color: lighten($color: $text-color, $amount: 50%);
+  font-size: 14px;
+  letter-spacing: 10px;
+
 }
 
 .footer {
@@ -103,17 +119,11 @@
   color: $text-color;
   align-items: center;
   justify-content: center;
-  align-items: center;
   text-align: center;
   //width: 100%;
   // max-width: 50%;
+}
 
-}
-@media screen and (max-width: 800px) {
-  .description {
-    max-width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
 .grid {
   display: flex;
   align-items: center;
